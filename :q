@@ -291,10 +291,8 @@ class Build(object):
         lattice_vects = np.dot(lattice_arcs, cell.lattice)
         count = 0
        # print("hi1")
-        print('Number of edges {}'.format(len(edges)))
-        print(edges)
-        for i, e in enumerate(itertools.combinations(edges, len(edges))):
-            print(e) 
+        print('Number of permuations {}'.format(len(list(itertools.permutations(edges)))))
+        for i, e in enumerate(itertools.permutations(edges)):
             count += 1
             indices = self._net.return_indices(e)
             #node_arcs = lattice_arcs[indices]*\
